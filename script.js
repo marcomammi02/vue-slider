@@ -30,4 +30,19 @@ new Vue({
         ],
         activeIndex: 0
     },
+    methods: {
+                changeSlide(direction) {
+                if (direction > 0) {
+                    this.activeIndex++;
+                    if (this.activeIndex === this.arrImages.length) {
+                        this.activeIndex = 0;
+                    }
+                } else {
+                    if (this.activeIndex === 0) {
+                        this.activeIndex = this.arrImages.length;
+                    }
+                    this.activeIndex--;
+                }
+                },
+    }
 });

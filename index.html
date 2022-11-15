@@ -43,8 +43,11 @@
         </div>
         <div class="small-img-container">
             <div class="comands">
-                <div class="btn btn-prev"><i class="fa-solid fa-chevron-up"></i></div>
-                <div class="btn btn-next"><i class="fa-solid fa-chevron-down"></i></div>
+                <div class="btn btn-prev" @click="changeSlide(-1)"><i class="fa-solid fa-chevron-up"></i></div>
+                <div class="btn btn-next" @click="changeSlide(1)"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div v-for="(thum, i) in arrImages" :key="thum.image" class="thumb">
+                <img class="small-img" :src="'img/' + thum.image" :class="i == activeIndex ? 'active-small' : ''" alt="">
             </div>
         </div>
     </div>
