@@ -56,8 +56,13 @@ body {
     border-radius: 50%;
 }
 
-.slider-img {
+.objSlide {
     display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -72,8 +77,8 @@ body {
     text-align: right;
     color: #ffffff;
     background-color: rgba(0, 0, 0, .5);
-    display: none;
     font-family: 'Montserrat', sans-serif;
+    z-index: 10;
 }
 
 .description-title {

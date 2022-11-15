@@ -29,8 +29,17 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="root">
         <div class="slider-container">
+
+            <div v-for="(objSlide, i) in arrImages" :key="objSlide.image" class="objSlide" :class="i == activeIndex ? 'active' : ''">
+                <img class="slider-img" :src="'img/' + objSlide.image" alt="">
+                <div class="description">
+                    <h1 class="description-title">{{ objSlide.title }}</h1>
+                    <p class="description-text">{{ objSlide.text }}</p>
+                </div>
+            </div>
+
         </div>
         <div class="small-img-container">
             <div class="comands">
@@ -43,5 +52,6 @@
         <button class="pause-play"><i class="fa-solid fa-pause"></i><i class="fa-solid fa-play"></i></button>
         <button class="invert-autoscroll">Scroll <i class="fa-solid fa-arrow-up"></i><i class="fa-solid fa-arrow-down"></i></button>
     </div>
+
 </body>
 </html>
